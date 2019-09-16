@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\SubscribeForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -33,6 +34,7 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                    'subscribe' => ['post'],
                 ],
             ],
         ];
@@ -124,5 +126,17 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionSubscribe()
+    {
+        $form = new SubscribeForm();
+        if ($form->load(Yii::$app->request->post(), '')) {
+            $form->subscribe();
+        }
+
+        return $this->render('subscribe', [
+            'form' => $form,
+        ]);
     }
 }

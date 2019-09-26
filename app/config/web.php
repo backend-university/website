@@ -11,6 +11,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => 'ru-RU',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -22,6 +23,9 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -48,7 +52,15 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'POST /subscribe' => 'site/subscribe',
+                'GET /product/<id:\d+>' => '/product/view',
+                'admin/<controller:\w+>/<action:\w+>'=>'admin-<controller>/<action>',
             ],
+        ],
+    ],
+    'modules' => [
+        //admin-modules must be prefixed with "admin-", then they will be accessible via "admin/modulename"
+        'admin-product' => [
+            'class' => 'app\admin\modules\product\ProductModule',
         ],
     ],
     'params' => $params,

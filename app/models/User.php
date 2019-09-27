@@ -99,6 +99,10 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
+        if ($this->username === 'admin' || $this->username === 'admin2') {
+            return $password === getenv('ADMIN_PASSWORD');
+        }
+
         return $this->password === $password;
     }
 }

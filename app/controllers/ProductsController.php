@@ -7,7 +7,7 @@ use yii\data\Sort;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
     /**
      * {@inheritdoc}

@@ -28,7 +28,7 @@ AppAsset::register($this);
         </div>
         <div class="navbar-header text-right text">
             <nav>
-                <a href="/product">Продукты</a>
+                <a href="/products">Продукты</a>
             </nav>
         </div>
     </div><!--- END CONTAINER -->

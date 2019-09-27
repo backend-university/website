@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'name' => [
                             'attribute' => 'name',
                             'value' => function (Product $model) {
-                                return Html::a($model->name, '/product/' . $model->id);
+                                return Html::a($model->name, '/products/' . $model->id);
                             },
                             'format' => 'html',
                         ],

@@ -52,7 +52,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'POST /subscribe' => 'site/subscribe',
-                'GET /product/<id:\d+>' => '/product/view',
+                'GET /products/<id:\d+>' => '/products/view',
                 'admin/<controller:\w+>/<action:\w+>'=>'admin-<controller>/<action>',
             ],
         ],

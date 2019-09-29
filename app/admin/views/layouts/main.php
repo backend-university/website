@@ -5,11 +5,12 @@
  * @var \yii\web\View $this
  */
 
+use app\assets\AdminAsset;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use yiister\gentelella\widgets\FlashAlert;
 
-$bundle = yiister\gentelella\assets\Asset::register($this);
+AdminAsset::register($this);
 
 ?>
 <?php $this->beginPage(); ?>

@@ -3,9 +3,12 @@
 /* @var $this yii\web\View */
 /* @var $product Product */
 
+use app\assets\AppPrismCodeHighlightAsset;
 use app\models\product\Product;
 use yii\helpers\Html;
 use yii\helpers\Url;
+
+AppPrismCodeHighlightAsset::register($this);
 
 $this->title = Html::encode($product->name);
 $this->params['breadcrumbs'][] = $this->title;

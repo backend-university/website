@@ -6,13 +6,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\product\Product */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
-<style>
-    .ck-editor__editable_inline {
-        min-height: 500px !important;
-    }
-</style>
 
 <div class="product-form">
 
@@ -26,9 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'screencast_description')->textarea(['rows' => 3]) ?>
 
-    <?= $form->field($model, 'theory')->textarea(['rows' => 18]) ?>
+    <?= $form->field($model, 'theory')->textarea(['rows' => 18, 'class' => 'textarea-ckeditor']) ?>
 
-    <?= $form->field($model, 'instructions')->textarea(['rows' => 18]) ?>
+    <?= $form->field($model, 'instructions')->textarea(['rows' => 18, 'class' => 'textarea-ckeditor']) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
@@ -37,16 +32,3 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
-
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#product-theory' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    ClassicEditor
-        .create( document.querySelector( '#product-instructions' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>

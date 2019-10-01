@@ -60,7 +60,9 @@ $this->title = 'Backend University - Симулятор бэкенда';
             </div><!-- END COL-->
         </div><!-- END ROW -->
     </div><!-- END CONTAINER -->
-    <div class="container pb-5">
+</section>
+<section class="products-features section-padding">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 ">
                 <div class="row">
@@ -80,9 +82,98 @@ $this->title = 'Backend University - Симулятор бэкенда';
                 </div><!-- END COL-->
             </div><!-- END ROW -->
         </div>
+    </div><!-- END CONTAINER-->
+</section>
+<section class="main_feature_two section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 aos-init aos-animate" data-aos="fade-up">
+                <div class="section-title text-center">
+                    <h1>Начало положено</h1>
+                    <span></span>
+                    <p>
+                        Мы начинаем идти к построению сложной системы маленькими шагами
+                    </p>
+                </div>
+            </div><!-- END COL -->
+        </div><!-- END ROW -->
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12  text-center">
+                <div class="">
+                    <div class="card-img-bottom video-container">
+                        <iframe id="ytplayer" type="text/html" width="640" height="360"
+                                src="https://www.youtube.com/embed/0vNKB1v5ZrY?autoplay=1&origin=https://backend-university.ru"
+                                frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div><!-- END COL-->
+            <div class="col-md-6 col-sm-12 col-xs-12 p-5">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 aos-init" data-aos="fade-up">
+                        <div class="single-feature-two">
+                            <h4>Установка Armbian на OrangePi</h4>
+                            <p><a href="">Полная статья</a> уже вышла</p>
+                            <div style="padding-left: 20px">
+                                <ul>
+                                    <li>Запись изображения Armbian на флешку</li>
+                                    <li>Запуск на OrangePi</li>
+                                    <li>...</li>
+                                    <li>Дальше будем строить масштабируемый бэкенд</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- END COL -->
+                </div><!-- END ROW -->
+            </div><!-- END COL-->
+        </div><!-- END ROW -->
+    </div><!-- END CONTAINER -->
+    <div class="container pb-5 pt-lg-5 pt-sm-0">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                <div class="row">
+                    <div class="col-md-12 aos-init aos-animate" data-aos="fade-up">
+                        <div class="text-center">
+                            <h1>Продукты</h1>
+                            <div>
+                                <?= \yii\grid\GridView::widget([
+                                    'dataProvider' => new \yii\data\ActiveDataProvider([
+                                        'query' => \app\models\product\Product::find(),
+                                        'sort' => [
+                                            'class' => 'yii\data\Sort',
+                                            'defaultOrder' => [
+                                                'created_at' => SORT_DESC,
+                                            ]
+                                        ],
+                                        'pagination' => [
+                                            'class' => 'yii\data\Pagination',
+                                            'pageSize' => 3,
+                                        ]
+                                    ]),
+                                    'tableOptions' => ['class' => 'table table-hover table-pointer'],
+                                    'showHeader' => false,
+                                    'layout' => "{items}",
+                                    'columns' => [
+                                        'name' => [
+                                            'attribute' => 'name',
+                                            'value' => function (\app\models\product\Product $model) {
+                                                return \yii\helpers\Html::a($model->name, '/products/' . $model->id);
+                                            },
+                                            'format' => 'html',
+                                        ],
+                                        'description:ntext',
+                                        'updated_at:date',
+                                    ],
+                                ]) ?>
+                            </div>
+                            <div class="text-center"><a href="/products">Смотреть список ></a></div>
+                        </div>
+                    </div><!-- END COL -->
+                </div><!-- END COL-->
+            </div><!-- END ROW -->
+        </div>
     </div>
 </section>
-<section id="pricing" class="products-features section-padding">
+<section id="subscibe-f" class="products-features section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 aos-init aos-animate" data-aos="fade-up">

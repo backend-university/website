@@ -34,6 +34,12 @@ class SubscribeForm extends Model
             if (!$this->subscribed) {
                 $sub = new WebsiteSubscription(['email' => $this->email]);
                 $this->subscribed = $sub->save();
+
+                Yii::$app->getMailer()->compose()
+                    ->setFrom(Yii::$app->params['senderEmail'])
+                    ->setTo(Yii::$app->params['adminEmail'])
+                    ->setSubject('Новая подписка')
+                    ->setTextBody("from: {$this->email}");
             }
 
             return true;

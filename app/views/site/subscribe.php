@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $form SubscribeForm */
+/* @var $adminEmail string */
 
 use app\models\SubscribeForm;
 use yii\widgets\ActiveForm;
@@ -25,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h4>Ошибка</h4>
                     <p>
                         Что-то не получилось. Но я очень хочу рассказать вам о текущих наработках по проекту,
-                        поэтому прошу вас написать мне на <a href="mailto:{{ adminEmail }}">{{ adminEmail }}</a> или
+                        поэтому прошу вас написать мне на <a href="mailto:<?= $adminEmail ?>"><?= $adminEmail ?></a> или
                     </p>
                     <h5>Попробовать еще раз</h5>
                     <?php ActiveForm::begin(['action' => '/subscribe']) ?>

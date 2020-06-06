@@ -137,6 +137,7 @@ class SiteController extends Controller
 
         return $this->render('subscribe', [
             'form' => $form,
+            'adminEmail' => Yii::$app->params['adminEmail'],
         ]);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'senderEmail' => 'noreply@example.com',
-    'senderName' => 'Example.com mailer',
+    'adminEmail' => \getenv('ADMIN_EMAIL', true) ?: 'default@backend-university.ru',
+    'senderEmail' => 'noreply@backend-university.ru',
+    'senderName' => 'Backend-university mailer',
 ];

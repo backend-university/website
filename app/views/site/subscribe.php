@@ -7,7 +7,7 @@
 use app\models\SubscribeForm;
 use yii\widgets\ActiveForm;
 
-$this->title = $form->hasErrors() ? 'Спасибо за подписку!' : 'Ошибка';
+$this->title = !$form->hasErrors() ? 'Спасибо за подписку!' : 'Ошибка';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

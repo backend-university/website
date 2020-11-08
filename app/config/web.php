@@ -9,7 +9,7 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'language' => 'ru-RU',
     'components' => [
@@ -53,7 +53,7 @@ $config = [
             'rules' => [
                 'POST /subscribe' => 'site/subscribe',
                 'GET /products/<id:\d+>' => '/products/view',
-                'admin/<controller:\w+>/<action:\w+>'=>'admin-<controller>/<action>',
+                'admin/<controller:\w+>/<action:\w+>' => 'admin-<controller>/<action>',
             ],
         ],
     ],
@@ -61,6 +61,9 @@ $config = [
         //admin-modules must be prefixed with "admin-", then they will be accessible via "admin/modulename"
         'admin-product' => [
             'class' => 'app\admin\modules\product\ProductModule',
+        ],
+        'admin-subscription' => [
+            'class' => 'app\admin\modules\subscription\SubscriptionModule',
         ],
     ],
     'params' => $params,

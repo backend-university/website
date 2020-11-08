@@ -29,7 +29,6 @@ AppAsset::register($this);
         <div class="navbar-header text-right text">
             <nav>
                 <a href="/products">Продукты</a>
-                <a href="/subscriptions">Подписки</a>
             </nav>
         </div>
     </div><!--- END CONTAINER -->

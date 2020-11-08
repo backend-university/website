@@ -65,6 +65,14 @@ AdminAsset::register($this);
                                             ["label" => "Products", "url" => ["/admin/product/default"]],
                                         ],
                                     ],
+                                    [
+                                        "label" => Yii::t('app', 'Subscriptions'),
+                                        "icon" => "address-book",
+                                        "url" => "#",
+                                        "items" => [
+                                            ["label" => "List", "url" => ["/admin/subscription/default"]],
+                                        ],
+                                    ],
                                 ],
                             ]
                         )

@@ -21,7 +21,7 @@ class DefaultController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['subscription'],
+                        'roles' => ['viewSubscriptions'],
                     ],
                 ],
             ],
